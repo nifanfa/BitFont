@@ -4,6 +4,7 @@ namespace ConsoleApp1
 {
     class Program
     {
+        //Hello Github I'm nifanfa
         static void Main(string[] args)
         {
             Console.WriteLine(Convert.ToByte("00011001", 2));
