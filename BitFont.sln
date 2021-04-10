@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generator", "Generator\Generator.csproj", "{A0B9C183-79CB-4B9D-A128-DD1235B9DD03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{B0DE036B-6974-4C25-96C0-C2775AFC478E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Viewer", "Viewer\Viewer.csproj", "{A49A4AB3-ABDC-4B47-A405-D9238BA9CF13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0B9C183-79CB-4B9D-A128-DD1235B9DD03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0B9C183-79CB-4B9D-A128-DD1235B9DD03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0B9C183-79CB-4B9D-A128-DD1235B9DD03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0B9C183-79CB-4B9D-A128-DD1235B9DD03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0DE036B-6974-4C25-96C0-C2775AFC478E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0DE036B-6974-4C25-96C0-C2775AFC478E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0DE036B-6974-4C25-96C0-C2775AFC478E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0DE036B-6974-4C25-96C0-C2775AFC478E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A49A4AB3-ABDC-4B47-A405-D9238BA9CF13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A49A4AB3-ABDC-4B47-A405-D9238BA9CF13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A49A4AB3-ABDC-4B47-A405-D9238BA9CF13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A49A4AB3-ABDC-4B47-A405-D9238BA9CF13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {237AE068-8A8A-4302-9201-D0D8A3415640}
+	EndGlobalSection
+EndGlobal
