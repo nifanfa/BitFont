@@ -1,11 +1,13 @@
-﻿namespace ConsoleApp1
+﻿using System.IO;
+using System.Text;
+
+namespace ConsoleApp1
 {
     class Program
     {
         //Hello Github I'm nifanfa
         static void Main(string[] args)
         {
-            /*
             string s = string.Empty;
 
             for (byte i = 0x00; i < 0x7F; i++)
@@ -15,7 +17,6 @@
             }
 
             File.WriteAllText("ASCII.txt", s);
-            */
         }
     }
 }
