@@ -167,7 +167,7 @@ namespace Generator
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Binary File|*.bin";
-            saveFileDialog.FileName = $"{Fnt.FontFamily.Name}{CharsetFileName}{Size}.bin";
+            saveFileDialog.FileName = $"{Fnt.FontFamily.Name}{CharsetFileName}{FinalSize}.bin";
             saveFileDialog.ShowDialog();
             File.WriteAllBytes(saveFileDialog.FileName, Data.ToArray());
             GC.Collect();
