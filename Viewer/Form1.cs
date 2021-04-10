@@ -21,6 +21,13 @@ namespace Viewer
             openFileDialog.Filter = "Binary File|*.bin";
             openFileDialog.ShowDialog();
             memoryStream = new MemoryStream(File.ReadAllBytes(openFileDialog.FileName));
+
+            Title();
+        }
+
+        private void Title()
+        {
+            this.Text = "Number：" + (memoryStream.Length / (Size * (Size / 8))).ToString();
         }
 
         private void Load_Click(object sender, EventArgs e)
@@ -31,7 +38,8 @@ namespace Viewer
             memoryStream.Seek(SizePerFont * aIndex, SeekOrigin.Begin);
             memoryStream.Read(buffer, 0, buffer.Length);
 
-            Graphics graphics = PreviewBox.CreateGraphics();
+            Bitmap bitmap = new Bitmap(Size, Size);
+            Graphics graphics = Graphics.FromImage(bitmap);
             graphics.Clear(Color.White);
             for (int h = 0; h < Size; h++)
             {
@@ -46,17 +54,16 @@ namespace Viewer
                     }
                 }
             }
-
-            foreach (var v in buffer)
-            {
-                Console.WriteLine(Convert.ToString(v, 16));
-            }
+            graphics.Flush();
+            graphics.Dispose();
+            PreviewBox.Image = bitmap;
         }
 
         private void Add_Click(object sender, EventArgs e)
         {
             Size += 8;
             NotifyDataChanged();
+            Title();
         }
 
         private void Minus_Click(object sender, EventArgs e)
@@ -64,6 +71,7 @@ namespace Viewer
             if (Size - 8 < 8) return;
             Size -= 8;
             NotifyDataChanged();
+            Title();
         }
 
         private void NotifyDataChanged()

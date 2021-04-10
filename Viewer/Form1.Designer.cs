@@ -31,12 +31,12 @@ namespace Viewer
         {
             this.LoadButton = new System.Windows.Forms.Button();
             this.SizeLabel = new System.Windows.Forms.Label();
-            this.Index = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Open = new System.Windows.Forms.Button();
             this.PreviewBox = new System.Windows.Forms.PictureBox();
             this.Minus = new System.Windows.Forms.Button();
             this.Add = new System.Windows.Forms.Button();
+            this.Index = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PreviewBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,14 +58,6 @@ namespace Viewer
             this.SizeLabel.Size = new System.Drawing.Size(41, 12);
             this.SizeLabel.TabIndex = 1;
             this.SizeLabel.Text = "label1";
-            // 
-            // Index
-            // 
-            this.Index.Location = new System.Drawing.Point(147, 46);
-            this.Index.Name = "Index";
-            this.Index.Size = new System.Drawing.Size(100, 21);
-            this.Index.TabIndex = 3;
-            this.Index.Text = "0";
             // 
             // label2
             // 
@@ -115,6 +107,14 @@ namespace Viewer
             this.Add.UseVisualStyleBackColor = true;
             this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
+            // Index
+            // 
+            this.Index.Location = new System.Drawing.Point(147, 46);
+            this.Index.Name = "Index";
+            this.Index.Size = new System.Drawing.Size(100, 21);
+            this.Index.TabIndex = 3;
+            this.Index.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -141,12 +141,12 @@ namespace Viewer
 
         private System.Windows.Forms.Button LoadButton;
         private System.Windows.Forms.Label SizeLabel;
-        private System.Windows.Forms.TextBox Index;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Open;
         private System.Windows.Forms.PictureBox PreviewBox;
         private System.Windows.Forms.Button Minus;
         private System.Windows.Forms.Button Add;
+        private System.Windows.Forms.TextBox Index;
     }
 }
 
