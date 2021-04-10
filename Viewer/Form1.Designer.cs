@@ -91,6 +91,7 @@ namespace Viewer
             this.PreviewBox.Location = new System.Drawing.Point(12, 97);
             this.PreviewBox.Name = "PreviewBox";
             this.PreviewBox.Size = new System.Drawing.Size(235, 195);
+            this.PreviewBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.PreviewBox.TabIndex = 7;
             this.PreviewBox.TabStop = false;
             // 

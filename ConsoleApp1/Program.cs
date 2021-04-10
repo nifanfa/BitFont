@@ -7,9 +7,6 @@ namespace ConsoleApp1
         //Hello Github I'm nifanfa
         static void Main(string[] args)
         {
-            Console.WriteLine(Convert.ToByte("00011001", 2));
-            Console.ReadKey();
-
             /*
             string s = string.Empty;
 

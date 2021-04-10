@@ -12,6 +12,7 @@ namespace Generator
         int Size = 8;
         Font Fnt = new Font("Arial", 8);
         string Charset = string.Empty;
+        string CharsetFileName = string.Empty;
 
         public Form1()
         {
@@ -123,6 +124,7 @@ namespace Generator
             openFileDialog.Filter = "TXT File|*.txt";
             openFileDialog.ShowDialog();
             Charset = File.ReadAllText(openFileDialog.FileName);
+            CharsetFileName = openFileDialog.SafeFileName.Substring(0, openFileDialog.SafeFileName.LastIndexOf("."));
         }
 
         private void Save_Click(object sender, EventArgs e)
@@ -165,6 +167,7 @@ namespace Generator
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Binary File|*.bin";
+            saveFileDialog.FileName = $"{Fnt.SystemFontName}{CharsetFileName}{Size}.bin";
             saveFileDialog.ShowDialog();
             File.WriteAllBytes(saveFileDialog.FileName, Data.ToArray());
             GC.Collect();
