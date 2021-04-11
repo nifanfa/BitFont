@@ -221,9 +221,9 @@ namespace Generator
             ChangeLan();
         }
 
-        void ChangeLan() 
+        void ChangeLan()
         {
-            switch (UILan) 
+            switch (UILan)
             {
                 case Lan.Chinese:
                     CharsetLabel.Text = "字符集：";
