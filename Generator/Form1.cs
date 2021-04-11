@@ -11,8 +11,10 @@ namespace Generator
         int FinalSize = 8;
         int Size = 8;
         Font Fnt = new Font("Arial", 8);
-        string Charset = string.Empty;
-        string CharsetFileName = string.Empty;
+        string Charset
+        {
+            get => CharsetBox.Text;
+        }
 
         public Form1()
         {
@@ -36,6 +38,8 @@ namespace Generator
 
         private void NotifyDataChanged()
         {
+            if (PreviewText.Text.Length == 0) return;
+
             SizeLabel.Text = FinalSize + "px";
 
             Draw(PreviewText.Text[0]);
@@ -118,16 +122,12 @@ namespace Generator
             NotifyDataChanged();
         }
 
-        private void SelectCharset_Click(object sender, EventArgs e)
+        private void Save_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "TXT File|*.txt";
-            openFileDialog.ShowDialog();
-            Charset = File.ReadAllText(openFileDialog.FileName);
-            CharsetFileName = openFileDialog.SafeFileName.Substring(0, openFileDialog.SafeFileName.LastIndexOf("."));
+            SaveFile();
         }
 
-        private void Save_Click(object sender, EventArgs e)
+        private void SaveFile(bool SaveAsBase64 = false, bool SaveForCosmos = false)
         {
             if (Charset == string.Empty)
             {
@@ -165,12 +165,38 @@ namespace Generator
                 }
             }
 
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Binary File|*.bin";
-            saveFileDialog.FileName = $"{Fnt.FontFamily.Name}{CharsetFileName}{FinalSize}.bin";
-            saveFileDialog.ShowDialog();
-            File.WriteAllBytes(saveFileDialog.FileName, Data.ToArray());
+            if (!SaveAsBase64)
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Binary File|*.bin";
+                saveFileDialog.FileName = $"{Fnt.FontFamily.Name}CustomCharset{FinalSize}.bin";
+                saveFileDialog.ShowDialog();
+                File.WriteAllBytes(saveFileDialog.FileName, Data.ToArray());
+            }
+            else
+            {
+                if (!SaveForCosmos)
+                {
+                    Clipboard.SetText(Convert.ToBase64String(Data.ToArray()));
+                    MessageBox.Show("The File Has Been Saved In Your Clipboard.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Clipboard.SetText($"string CustomCharset = \"{Charset}\";\nMemoryStream {Fnt.FontFamily.Name}CustomCharset{FinalSize} = new MemoryStream(Convert.FromBase64String(\"{Convert.ToBase64String(Data.ToArray())}\"));\nBitFont.RegisterBitFont(\"{Fnt.FontFamily.Name}CustomCharset{FinalSize}\", new BitFontDescriptor(CustomCharset, {Fnt.FontFamily.Name}CustomCharset{FinalSize}, {FinalSize}));");
+                    MessageBox.Show("The File Has Been Saved In Your Clipboard.\nNote: In The Cosmos If The String Too Long Will Crash The NASM So Split Them.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
             GC.Collect();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SaveFile(true);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SaveFile(true, true);
         }
     }
 }
