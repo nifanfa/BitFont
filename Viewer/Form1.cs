@@ -76,11 +76,57 @@ namespace Viewer
 
         private void NotifyDataChanged()
         {
-            SizeLabel.Text = $"Size：{Size}";
+            switch (UILan)
+            {
+                case Lan.Chinese:
+                    SizeLabel.Text = $"大小：{Size}";
+                    break;
+                case Lan.English:
+                    SizeLabel.Text = $"Size：{Size}";
+                    break;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            NotifyDataChanged();
+            ChangeLan();
+        }
+
+        enum Lan
+        {
+            English, Chinese
+        }
+
+        Lan UILan = Lan.Chinese;
+
+        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UILan = Lan.English;
+            ChangeLan();
+        }
+
+        private void 中文ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UILan = Lan.Chinese;
+            ChangeLan();
+        }
+
+        void ChangeLan()
+        {
+            switch (UILan)
+            {
+                case Lan.Chinese:
+                    Open.Text = "打开";
+                    LoadButton.Text = "加载";
+                    label2.Text = "第几个：";
+                    break;
+                case Lan.English:
+                    Open.Text = "Open";
+                    LoadButton.Text = "Load";
+                    label2.Text = "Index：";
+                    break;
+            }
             NotifyDataChanged();
         }
     }

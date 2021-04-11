@@ -37,12 +37,16 @@ namespace Viewer
             this.Minus = new System.Windows.Forms.Button();
             this.Add = new System.Windows.Forms.Button();
             this.Index = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.中文ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.PreviewBox)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // LoadButton
             // 
-            this.LoadButton.Location = new System.Drawing.Point(12, 44);
+            this.LoadButton.Location = new System.Drawing.Point(12, 60);
             this.LoadButton.Name = "LoadButton";
             this.LoadButton.Size = new System.Drawing.Size(75, 23);
             this.LoadButton.TabIndex = 0;
@@ -53,7 +57,7 @@ namespace Viewer
             // SizeLabel
             // 
             this.SizeLabel.AutoSize = true;
-            this.SizeLabel.Location = new System.Drawing.Point(99, 17);
+            this.SizeLabel.Location = new System.Drawing.Point(99, 33);
             this.SizeLabel.Name = "SizeLabel";
             this.SizeLabel.Size = new System.Drawing.Size(41, 12);
             this.SizeLabel.TabIndex = 1;
@@ -62,7 +66,7 @@ namespace Viewer
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(99, 49);
+            this.label2.Location = new System.Drawing.Point(99, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 12);
             this.label2.TabIndex = 5;
@@ -70,7 +74,7 @@ namespace Viewer
             // 
             // Open
             // 
-            this.Open.Location = new System.Drawing.Point(12, 12);
+            this.Open.Location = new System.Drawing.Point(12, 28);
             this.Open.Name = "Open";
             this.Open.Size = new System.Drawing.Size(75, 23);
             this.Open.TabIndex = 6;
@@ -80,7 +84,7 @@ namespace Viewer
             // 
             // PreviewBox
             // 
-            this.PreviewBox.Location = new System.Drawing.Point(12, 97);
+            this.PreviewBox.Location = new System.Drawing.Point(12, 89);
             this.PreviewBox.Name = "PreviewBox";
             this.PreviewBox.Size = new System.Drawing.Size(235, 195);
             this.PreviewBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -89,7 +93,7 @@ namespace Viewer
             // 
             // Minus
             // 
-            this.Minus.Location = new System.Drawing.Point(224, 12);
+            this.Minus.Location = new System.Drawing.Point(224, 28);
             this.Minus.Name = "Minus";
             this.Minus.Size = new System.Drawing.Size(23, 23);
             this.Minus.TabIndex = 8;
@@ -99,7 +103,7 @@ namespace Viewer
             // 
             // Add
             // 
-            this.Add.Location = new System.Drawing.Point(195, 12);
+            this.Add.Location = new System.Drawing.Point(195, 28);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(23, 23);
             this.Add.TabIndex = 9;
@@ -109,29 +113,58 @@ namespace Viewer
             // 
             // Index
             // 
-            this.Index.Location = new System.Drawing.Point(147, 46);
+            this.Index.Location = new System.Drawing.Point(147, 62);
             this.Index.Name = "Index";
             this.Index.Size = new System.Drawing.Size(100, 21);
             this.Index.TabIndex = 3;
             this.Index.Text = "0";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.englishToolStripMenuItem,
+            this.中文ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(259, 25);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // englishToolStripMenuItem
+            // 
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(61, 21);
+            this.englishToolStripMenuItem.Text = "English";
+            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
+            // 
+            // 中文ToolStripMenuItem
+            // 
+            this.中文ToolStripMenuItem.Name = "中文ToolStripMenuItem";
+            this.中文ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.中文ToolStripMenuItem.Text = "中文";
+            this.中文ToolStripMenuItem.Click += new System.EventHandler(this.中文ToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(259, 304);
+            this.ClientSize = new System.Drawing.Size(259, 296);
+            this.Controls.Add(this.Index);
             this.Controls.Add(this.Add);
             this.Controls.Add(this.Minus);
             this.Controls.Add(this.PreviewBox);
             this.Controls.Add(this.Open);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.Index);
             this.Controls.Add(this.SizeLabel);
             this.Controls.Add(this.LoadButton);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PreviewBox)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,6 +180,9 @@ namespace Viewer
         private System.Windows.Forms.Button Minus;
         private System.Windows.Forms.Button Add;
         private System.Windows.Forms.TextBox Index;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 中文ToolStripMenuItem;
     }
 }
 

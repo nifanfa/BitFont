@@ -41,27 +41,32 @@ namespace Generator
             this.Minus = new System.Windows.Forms.Button();
             this.SizeLabel = new System.Windows.Forms.Label();
             this.PreviewText = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.SelectFontButton = new System.Windows.Forms.Button();
+            this.PreviewCharLabel = new System.Windows.Forms.Label();
             this.CharsetBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.CharsetLabel = new System.Windows.Forms.Label();
+            this.SaveAsBase64Button = new System.Windows.Forms.Button();
+            this.SaveForCosmosButton = new System.Windows.Forms.Button();
+            this.TipLabel = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.中文ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.PreviewBox)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PreviewBox
             // 
-            this.PreviewBox.Location = new System.Drawing.Point(309, 20);
+            this.PreviewBox.Location = new System.Drawing.Point(311, 55);
             this.PreviewBox.Name = "PreviewBox";
-            this.PreviewBox.Size = new System.Drawing.Size(256, 191);
+            this.PreviewBox.Size = new System.Drawing.Size(256, 198);
             this.PreviewBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.PreviewBox.TabIndex = 1;
             this.PreviewBox.TabStop = false;
             // 
             // Right
             // 
-            this.Right.Location = new System.Drawing.Point(273, 60);
+            this.Right.Location = new System.Drawing.Point(275, 134);
             this.Right.Name = "Right";
             this.Right.Size = new System.Drawing.Size(30, 30);
             this.Right.TabIndex = 4;
@@ -71,7 +76,7 @@ namespace Generator
             // 
             // Left
             // 
-            this.Left.Location = new System.Drawing.Point(201, 60);
+            this.Left.Location = new System.Drawing.Point(203, 134);
             this.Left.Name = "Left";
             this.Left.Size = new System.Drawing.Size(30, 30);
             this.Left.TabIndex = 5;
@@ -81,7 +86,7 @@ namespace Generator
             // 
             // Down
             // 
-            this.Down.Location = new System.Drawing.Point(237, 96);
+            this.Down.Location = new System.Drawing.Point(239, 170);
             this.Down.Name = "Down";
             this.Down.Size = new System.Drawing.Size(30, 30);
             this.Down.TabIndex = 7;
@@ -91,7 +96,7 @@ namespace Generator
             // 
             // Up
             // 
-            this.Up.Location = new System.Drawing.Point(237, 24);
+            this.Up.Location = new System.Drawing.Point(239, 98);
             this.Up.Name = "Up";
             this.Up.Size = new System.Drawing.Size(30, 30);
             this.Up.TabIndex = 8;
@@ -101,7 +106,7 @@ namespace Generator
             // 
             // Smaller
             // 
-            this.Smaller.Location = new System.Drawing.Point(12, 244);
+            this.Smaller.Location = new System.Drawing.Point(12, 286);
             this.Smaller.Name = "Smaller";
             this.Smaller.Size = new System.Drawing.Size(75, 23);
             this.Smaller.TabIndex = 9;
@@ -111,7 +116,7 @@ namespace Generator
             // 
             // Bigger
             // 
-            this.Bigger.Location = new System.Drawing.Point(12, 215);
+            this.Bigger.Location = new System.Drawing.Point(12, 257);
             this.Bigger.Name = "Bigger";
             this.Bigger.Size = new System.Drawing.Size(75, 23);
             this.Bigger.TabIndex = 10;
@@ -121,7 +126,7 @@ namespace Generator
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(387, 246);
+            this.Save.Location = new System.Drawing.Point(387, 288);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(75, 23);
             this.Save.TabIndex = 11;
@@ -131,7 +136,7 @@ namespace Generator
             // 
             // Add
             // 
-            this.Add.Location = new System.Drawing.Point(282, 246);
+            this.Add.Location = new System.Drawing.Point(282, 288);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(23, 23);
             this.Add.TabIndex = 12;
@@ -141,7 +146,7 @@ namespace Generator
             // 
             // Minus
             // 
-            this.Minus.Location = new System.Drawing.Point(358, 246);
+            this.Minus.Location = new System.Drawing.Point(358, 288);
             this.Minus.Name = "Minus";
             this.Minus.Size = new System.Drawing.Size(23, 23);
             this.Minus.TabIndex = 13;
@@ -152,7 +157,7 @@ namespace Generator
             // SizeLabel
             // 
             this.SizeLabel.AutoSize = true;
-            this.SizeLabel.Location = new System.Drawing.Point(311, 251);
+            this.SizeLabel.Location = new System.Drawing.Point(311, 293);
             this.SizeLabel.Name = "SizeLabel";
             this.SizeLabel.Size = new System.Drawing.Size(41, 12);
             this.SizeLabel.TabIndex = 14;
@@ -160,7 +165,7 @@ namespace Generator
             // 
             // PreviewText
             // 
-            this.PreviewText.Location = new System.Drawing.Point(93, 246);
+            this.PreviewText.Location = new System.Drawing.Point(93, 288);
             this.PreviewText.MaxLength = 1;
             this.PreviewText.Name = "PreviewText";
             this.PreviewText.Size = new System.Drawing.Size(102, 21);
@@ -168,73 +173,108 @@ namespace Generator
             this.PreviewText.Text = "A";
             this.PreviewText.TextChanged += new System.EventHandler(this.PreviewText_TextChanged);
             // 
-            // button1
+            // SelectFontButton
             // 
-            this.button1.Location = new System.Drawing.Point(201, 244);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "SelectFont";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.SelectFontButton.Location = new System.Drawing.Point(201, 286);
+            this.SelectFontButton.Name = "SelectFontButton";
+            this.SelectFontButton.Size = new System.Drawing.Size(75, 23);
+            this.SelectFontButton.TabIndex = 16;
+            this.SelectFontButton.Text = "SelectFont";
+            this.SelectFontButton.UseVisualStyleBackColor = true;
+            this.SelectFontButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
+            // PreviewCharLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(93, 226);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 12);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Preview Char：";
+            this.PreviewCharLabel.AutoSize = true;
+            this.PreviewCharLabel.Location = new System.Drawing.Point(93, 268);
+            this.PreviewCharLabel.Name = "PreviewCharLabel";
+            this.PreviewCharLabel.Size = new System.Drawing.Size(89, 12);
+            this.PreviewCharLabel.TabIndex = 17;
+            this.PreviewCharLabel.Text = "Preview Char：";
             // 
             // CharsetBox
             // 
-            this.CharsetBox.Location = new System.Drawing.Point(12, 24);
+            this.CharsetBox.Location = new System.Drawing.Point(14, 40);
             this.CharsetBox.Multiline = true;
             this.CharsetBox.Name = "CharsetBox";
-            this.CharsetBox.Size = new System.Drawing.Size(183, 185);
+            this.CharsetBox.Size = new System.Drawing.Size(183, 211);
             this.CharsetBox.TabIndex = 18;
             // 
-            // label2
+            // CharsetLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 12);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Charset：";
+            this.CharsetLabel.AutoSize = true;
+            this.CharsetLabel.Location = new System.Drawing.Point(12, 25);
+            this.CharsetLabel.Name = "CharsetLabel";
+            this.CharsetLabel.Size = new System.Drawing.Size(59, 12);
+            this.CharsetLabel.TabIndex = 19;
+            this.CharsetLabel.Text = "Charset：";
             // 
-            // button2
+            // SaveAsBase64Button
             // 
-            this.button2.Location = new System.Drawing.Point(468, 246);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 23);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "SaveAsBase64";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.SaveAsBase64Button.Location = new System.Drawing.Point(468, 288);
+            this.SaveAsBase64Button.Name = "SaveAsBase64Button";
+            this.SaveAsBase64Button.Size = new System.Drawing.Size(97, 23);
+            this.SaveAsBase64Button.TabIndex = 20;
+            this.SaveAsBase64Button.Text = "SaveAsBase64";
+            this.SaveAsBase64Button.UseVisualStyleBackColor = true;
+            this.SaveAsBase64Button.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // SaveForCosmosButton
             // 
-            this.button3.Location = new System.Drawing.Point(468, 217);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(97, 23);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "SaveForCosmos";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.SaveForCosmosButton.Location = new System.Drawing.Point(468, 259);
+            this.SaveForCosmosButton.Name = "SaveForCosmosButton";
+            this.SaveForCosmosButton.Size = new System.Drawing.Size(97, 23);
+            this.SaveForCosmosButton.TabIndex = 21;
+            this.SaveForCosmosButton.Text = "SaveForCosmos";
+            this.SaveForCosmosButton.UseVisualStyleBackColor = true;
+            this.SaveForCosmosButton.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // TipLabel
+            // 
+            this.TipLabel.AutoSize = true;
+            this.TipLabel.Location = new System.Drawing.Point(309, 40);
+            this.TipLabel.Name = "TipLabel";
+            this.TipLabel.Size = new System.Drawing.Size(245, 12);
+            this.TipLabel.TabIndex = 22;
+            this.TipLabel.Text = "PreviewBox (Please Keep Font Left Align)";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.englishToolStripMenuItem,
+            this.中文ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(577, 25);
+            this.menuStrip1.TabIndex = 23;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // englishToolStripMenuItem
+            // 
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(61, 21);
+            this.englishToolStripMenuItem.Text = "English";
+            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
+            // 
+            // 中文ToolStripMenuItem
+            // 
+            this.中文ToolStripMenuItem.Name = "中文ToolStripMenuItem";
+            this.中文ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.中文ToolStripMenuItem.Text = "中文";
+            this.中文ToolStripMenuItem.Click += new System.EventHandler(this.中文ToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(577, 279);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(577, 321);
+            this.Controls.Add(this.TipLabel);
+            this.Controls.Add(this.SaveForCosmosButton);
+            this.Controls.Add(this.SaveAsBase64Button);
+            this.Controls.Add(this.CharsetLabel);
             this.Controls.Add(this.CharsetBox);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.PreviewCharLabel);
+            this.Controls.Add(this.SelectFontButton);
             this.Controls.Add(this.PreviewText);
             this.Controls.Add(this.SizeLabel);
             this.Controls.Add(this.Minus);
@@ -247,10 +287,14 @@ namespace Generator
             this.Controls.Add(this.Left);
             this.Controls.Add(this.Right);
             this.Controls.Add(this.PreviewBox);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PreviewBox)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,12 +313,16 @@ namespace Generator
         private System.Windows.Forms.Button Minus;
         private System.Windows.Forms.Label SizeLabel;
         private System.Windows.Forms.TextBox PreviewText;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button SelectFontButton;
+        private System.Windows.Forms.Label PreviewCharLabel;
         private System.Windows.Forms.TextBox CharsetBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label CharsetLabel;
+        private System.Windows.Forms.Button SaveAsBase64Button;
+        private System.Windows.Forms.Button SaveForCosmosButton;
+        private System.Windows.Forms.Label TipLabel;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 中文ToolStripMenuItem;
     }
 }
 
