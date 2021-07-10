@@ -51,6 +51,7 @@ namespace Generator
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.中文ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveForMosaButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PreviewBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -263,11 +264,22 @@ namespace Generator
             this.中文ToolStripMenuItem.Text = "中文";
             this.中文ToolStripMenuItem.Click += new System.EventHandler(this.中文ToolStripMenuItem_Click);
             // 
+            // SaveForMosaButton
+            // 
+            this.SaveForMosaButton.Location = new System.Drawing.Point(358, 259);
+            this.SaveForMosaButton.Name = "SaveForMosaButton";
+            this.SaveForMosaButton.Size = new System.Drawing.Size(104, 23);
+            this.SaveForMosaButton.TabIndex = 24;
+            this.SaveForMosaButton.Text = "SaveForMosa";
+            this.SaveForMosaButton.UseVisualStyleBackColor = true;
+            this.SaveForMosaButton.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(577, 321);
+            this.Controls.Add(this.SaveForMosaButton);
             this.Controls.Add(this.TipLabel);
             this.Controls.Add(this.SaveForCosmosButton);
             this.Controls.Add(this.SaveAsBase64Button);
@@ -323,6 +335,7 @@ namespace Generator
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 中文ToolStripMenuItem;
+        private System.Windows.Forms.Button SaveForMosaButton;
     }
 }
 

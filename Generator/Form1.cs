@@ -129,10 +129,18 @@ namespace Generator
 
         private void Save_Click(object sender, EventArgs e)
         {
-            SaveFile();
+            SaveFile(SaveFor.File);
         }
 
-        private void SaveFile(bool SaveAsBase64 = false, bool SaveForCosmos = false)
+        enum SaveFor 
+        {
+            File,
+            Base64,
+            Cosmos,
+            MOSA
+        }
+
+        private void SaveFile(SaveFor saveFor = SaveFor.File)
         {
             if (Charset == string.Empty)
             {
@@ -168,38 +176,40 @@ namespace Generator
                 }
             }
 
-            if (!SaveAsBase64)
+            switch (saveFor) 
             {
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "Binary File|*.bin";
-                saveFileDialog.FileName = $"{Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize}.bin";
-                saveFileDialog.ShowDialog();
-                File.WriteAllBytes(saveFileDialog.FileName, Data.ToArray());
-            }
-            else
-            {
-                if (!SaveForCosmos)
-                {
+                case SaveFor.File:
+                    SaveFileDialog saveFileDialog = new SaveFileDialog();
+                    saveFileDialog.Filter = "Binary File|*.bin";
+                    saveFileDialog.FileName = $"{Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize}.bin";
+                    saveFileDialog.ShowDialog();
+                    File.WriteAllBytes(saveFileDialog.FileName, Data.ToArray());
+                    break;
+                case SaveFor.Base64:
                     Clipboard.SetText(Convert.ToBase64String(Data.ToArray()));
                     MessageBox.Show("The File Has Been Saved In Your Clipboard.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
+                    break;
+                case SaveFor.Cosmos:
                     Clipboard.SetText($"string CustomCharset = \"{Charset}\";\nMemoryStream {Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize} = new MemoryStream(Convert.FromBase64String(\"{Convert.ToBase64String(Data.ToArray())}\"));\nBitFont.RegisterBitFont(\"{Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize}\", new BitFontDescriptor(CustomCharset, {Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize}, {FinalSize}));");
                     MessageBox.Show("The File Has Been Saved In Your Clipboard.\nNote: In The Cosmos If The String Too Long Will Crash The NASM So Split Them.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                    break;
+                case SaveFor.MOSA:
+                    Clipboard.SetText($"string CustomCharset = \"{Charset}\";\nbyte[] {Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize} = Convert.FromBase64String(\"{Convert.ToBase64String(Data.ToArray())}\");\nBitFont.RegisterBitFont(new BitFontDescriptor(\"{Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize}\",CustomCharset, {Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize}, {FinalSize}));");
+                    MessageBox.Show("The File Has Been Saved In Your Clipboard.\nNote: Thanks For Using MOSA-Core!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
             }
+
             GC.Collect();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SaveFile(true);
+            SaveFile(SaveFor.Base64);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SaveFile(true, true);
+            SaveFile(SaveFor.Cosmos);
         }
 
         enum Lan
@@ -236,6 +246,7 @@ namespace Generator
                     Save.Text = "保存";
                     SaveAsBase64Button.Text = "保存为Base64";
                     SaveForCosmosButton.Text = "保存用于Cosmos";
+                    SaveForMosaButton.Text = "保存用于MOSA";
                     break;
                 case Lan.English:
                     CharsetLabel.Text = "Charset：";
@@ -248,8 +259,14 @@ namespace Generator
                     Save.Text = "Save";
                     SaveAsBase64Button.Text = "SaveAsBase64";
                     SaveForCosmosButton.Text = "SaveForCosmos";
+                    SaveForMosaButton.Text = "SaveForMOSA";
                     break;
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            SaveFile(SaveFor.MOSA);
         }
     }
 }
