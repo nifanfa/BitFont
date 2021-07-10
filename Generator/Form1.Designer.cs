@@ -195,11 +195,14 @@ namespace Generator
             // 
             // CharsetBox
             // 
+            this.CharsetBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.CharsetBox.Location = new System.Drawing.Point(14, 40);
             this.CharsetBox.Multiline = true;
             this.CharsetBox.Name = "CharsetBox";
             this.CharsetBox.Size = new System.Drawing.Size(183, 211);
             this.CharsetBox.TabIndex = 18;
+            this.CharsetBox.Text = "!\"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopq" +
+    "rstuvwxyz{|}~";
             // 
             // CharsetLabel
             // 
