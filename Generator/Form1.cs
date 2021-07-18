@@ -59,7 +59,7 @@ namespace Generator
             Graphics graphics = Graphics.FromImage(bitmap);
             StringFormat stringFormat = new StringFormat();
             stringFormat.Alignment = StringAlignment.Near;
-            stringFormat.LineAlignment = StringAlignment.Center;
+            stringFormat.LineAlignment = StringAlignment.Far;
             stringFormat.Trimming = StringTrimming.Character;
             graphics.TextRenderingHint = TextRenderingHint.SingleBitPerPixelGridFit;
             graphics.Clear(Color.White);
