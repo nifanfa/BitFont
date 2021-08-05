@@ -194,7 +194,7 @@ namespace Generator
                     MessageBox.Show("The File Has Been Saved In Your Clipboard.\nNote: In The Cosmos If The String Too Long Will Crash The NASM So Split Them.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case SaveFor.MOSA:
-                    Clipboard.SetText($"string CustomCharset = \"{Charset}\";\nbyte[] {Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize} = Convert.FromBase64String(\"{Convert.ToBase64String(Data.ToArray())}\");\nBitFont.RegisterBitFont(new BitFontDescriptor(\"{Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize}\",CustomCharset, {Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize}, {FinalSize}));");
+                    Clipboard.SetText($"string CustomCharset = \"{Charset}\";\nbyte[] {Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize} = Mosa.External.x86.Convert.FromBase64String(\"{Convert.ToBase64String(Data.ToArray())}\");\nBitFont.RegisterBitFont(new BitFontDescriptor(\"{Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize}\",CustomCharset, {Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize}, {FinalSize}));");
                     MessageBox.Show("The File Has Been Saved In Your Clipboard.\nNote: Thanks For Using MOSA-Core!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
             }
