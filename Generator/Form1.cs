@@ -181,7 +181,7 @@ namespace Generator
                 case SaveFor.File:
                     SaveFileDialog saveFileDialog = new SaveFileDialog();
                     saveFileDialog.Filter = "Binary File|*.bin";
-                    saveFileDialog.FileName = $"{Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize}.bin";
+                    saveFileDialog.FileName = $"{Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize}.btf";
                     saveFileDialog.ShowDialog();
                     File.WriteAllBytes(saveFileDialog.FileName, Data.ToArray());
                     break;
