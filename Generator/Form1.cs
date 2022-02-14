@@ -184,6 +184,8 @@ namespace Generator
                     saveFileDialog.FileName = $"{Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize}.btf";
                     saveFileDialog.ShowDialog();
                     File.WriteAllBytes(saveFileDialog.FileName, Data.ToArray());
+                    Clipboard.SetText($"string CustomCharset = \"{Charset}\";\nbyte[] {Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize} = File.ReadAllBytes(\"{Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize}\");\nBitFont.RegisterBitFont(new BitFontDescriptor(\"{Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize}\",CustomCharset, {Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize}, {FinalSize}));");
+                    MessageBox.Show("The Code Has Been Saved In Your Clipboard.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case SaveFor.Base64:
                     Clipboard.SetText(Convert.ToBase64String(Data.ToArray()));
