@@ -180,7 +180,7 @@ namespace Generator
             {
                 case SaveFor.File:
                     SaveFileDialog saveFileDialog = new SaveFileDialog();
-                    saveFileDialog.Filter = "Binary File|*.bin";
+                    saveFileDialog.Filter = "BitFont|*.btf";
                     saveFileDialog.FileName = $"{Fnt.FontFamily.Name.Replace(" ", "")}CustomCharset{FinalSize}.btf";
                     saveFileDialog.ShowDialog();
                     File.WriteAllBytes(saveFileDialog.FileName, Data.ToArray());
