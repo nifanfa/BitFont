@@ -18,7 +18,7 @@ namespace Viewer
         private void button2_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Binary File|*.bin";
+            openFileDialog.Filter = "BitFont File|*.btf";
             openFileDialog.ShowDialog();
             memoryStream = new MemoryStream(File.ReadAllBytes(openFileDialog.FileName));
 
