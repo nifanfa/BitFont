@@ -201,7 +201,8 @@ namespace Generator
             this.CharsetBox.Name = "CharsetBox";
             this.CharsetBox.Size = new System.Drawing.Size(183, 211);
             this.CharsetBox.TabIndex = 18;
-            this.CharsetBox.Text = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+            this.CharsetBox.Text = "!\"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopq" +
+    "rstuvwxyz{|}~";
             // 
             // CharsetLabel
             // 
