@@ -2,7 +2,8 @@
 Convert Windows Fonts to BitFont For Cosmos and more!  
 ![image](https://github.com/nifanfa/BitFont/blob/master/QQ截图20210710222229.png)
 
-For Cosmos https://github.com/nifanfa/BitFontCosmosKernelSample 
+Example:  
+https://github.com/nifanfa/MOOS/blob/master/Kernel/Misc/BitFont.cs
 
 Read Font Sample
 ```CSharp
